@@ -1,5 +1,7 @@
 package br.paduan;
 
+import javax.xml.transform.SourceLocator;
+
 /**
  * Hello world!
  */
@@ -12,27 +14,20 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        Lista lista = new Lista();
+        Pilha pilha = new Pilha();
 
-        lista.addEnd("Huguinho");
-        lista.addEnd("Zezinho");
-        lista.addEnd("Luizinho");
+        pilha.push("A");
+        pilha.push("B");
+        pilha.push("C");
 
-        System.out.println(lista.show());
+        System.out.println(pilha.show());
 
-        No temp = lista.removeStart();
-        System.out.println("Removeu " + temp.getName());
+        System.out.println("Valor no Topo: " + pilha.peek());
+        
 
-        System.out.println(lista.show());
-
-        lista.addStart("Patinhas");
-
-        System.out.println(lista.show());
-
-        temp = lista.removeEnd();
-        System.out.println("Removeu " + temp.getName());
-
-        System.out.println(lista.show());
+        while(!pilha.isEmpty()){
+            System.out.println(pilha.pop().getName());
+        }
 
     }
 }
